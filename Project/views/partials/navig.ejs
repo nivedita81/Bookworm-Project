@@ -1,0 +1,18 @@
+<section class="navsec">
+	<ul>
+		<!---If session does not exist, these links will be present in the navigation bar-->
+		<%   if(session === undefined){ %>
+		<li><a class="navbar" href="about">About Us</a></li>
+		<li><a class="navbar" href="connections">Events</a></li>
+		<li><a class="navbar" href="contact">Contact Us</a></li>
+		<% }%>
+
+		<!---If session exists, these links will be updated in the navigation bar-->
+		<%   if(session != undefined){ %>
+		<li><a class="navbar" href="about">About Us</a></li>
+		<li><a class="navbar" href="connections">Events</a></li>
+		<li><a class="navbar" href="contact">Contact Us</a></li>
+		<% }%>
+
+	</ul>
+</section>

@@ -1,0 +1,21 @@
+<div id="titleheader">
+	<a href="index"><img src="/assets/images/bookwarm.png" alt="bookwormlogo" class="logo" /></a>
+</div>
+<div id="top-bar">
+	<ul class="signupspace">
+		<!---If session does not exist these links will be present in the header-->
+		<%   if(session === undefined){ %>
+		<li><a href="login" class="signupicons">Login</a></li>
+		<li><a href="signup" class="signupicons">Sign Up</a></li>
+		<% }%>
+
+		<!---If session exists these links will be updated in the header-->
+		<%   if(session != undefined){ %>
+		<li><a href="newConnection" class="signupicons">Start a new connection</a></li>
+		<li><a class="signupicons" href="myConnections">My Events</a></li>
+		<li><a href="/myConnections/logout" class="signupicons">Log Out</a></li>
+
+		<div id="loginstatus" style="color: aquamarine; margin-top: 5px;">Welcome <%= session.firstName%>!</div>
+		<% }%>
+	</ul>
+</div>

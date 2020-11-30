@@ -1,0 +1,171 @@
+@charset "UTF-8";
+body{
+  margin: 0px;
+  height: 100%;
+  background-color: #000000;
+  width: 100%;
+  font-family: Helvetica;
+}
+
+#header{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    position: relative;
+}
+
+.logo{
+    width: 200px;
+    padding: 5px;
+    margin: 5px;
+}
+
+#top-bar{
+    position: absolute;
+    top: 20px;
+    right: 10px;
+}
+
+.signupspace{
+    list-style-type: none;
+    padding: 0px;
+    text-align: center;
+    margin: 0px;
+}
+
+header ul li {
+    display: inline-block;
+} 
+
+.signupicons{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+} 
+.signupicons:hover {
+    background-color: orange;
+}
+
+.signupspace .active {
+    background-color: #4CAF50;
+}
+
+#loginstatus{
+  display: block;
+  top: 0px;
+  margin-top: 30px;
+  margin-left: 10px;
+}
+
+.navsec{
+  background-color: #FFFFFF;
+  color: #000000;
+  padding: 10px;
+    margin-top: 5px;
+    position: relative;
+    display: block;
+    float: top;
+}
+
+.navsec ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    text-align: center;
+    margin: 0px;
+} 
+
+.navsec ul li {
+    display: inline-block;
+    font-size: 20px;
+} 
+
+.navbar{
+  text-align: center;
+    padding: 0px 30px;
+    display: block;
+    color: #000000;
+    font-weight: bolder;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.navbar.active {
+  background-color: #808080;
+  color: gray;
+}
+
+.navbar:hover:not(.active) {
+    background-color: #8a8a8a;
+    color: white;
+}
+
+main{
+    margin: 5px;
+}
+
+.isa_error{
+    color: red;
+    font: 100;
+    text-align: center;
+}
+
+input[type="text"], button {
+    width: 100%;
+    padding: 5px;
+    height: 35px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+
+.myLoginForm .pwd{
+    width: 100%;
+    padding: 5px;
+    height: 35px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+
+input:focus{
+    outline: none;
+}
+
+.myLoginForm {
+    width: 300px;
+    background-color: white;
+    border-radius: 8px;
+    margin: 10px auto;
+    padding: 30px;
+    height: 175px;
+}
+
+.myLoginForm button {
+    background-color: orange;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+    width: 40%;
+    margin-bottom: 10px;
+    height: 30px;
+    align-content: center;
+}
+
+.myLoginForm button:hover {
+    background-color: darkorange;
+}
+
+footer{
+    clear: both;
+     color: #808080;
+     bottom: 100px;
+     width: 100%;
+     height: auto;   
+     margin: 5px; 
+     padding: 10px 0px 10px 0px;
+     margin-top: 110px;
+ }

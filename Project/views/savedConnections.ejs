@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Saved Connections</title>
+	<link rel="stylesheet" type="text/css" href="assets/stylesheets/savedConnections.css" />
+</head>
+
+<body>
+	<header id="header">
+		<% include partials/header.ejs %>
+	</header>
+
+	<nav>
+		<% include partials/navig.ejs %>
+	</nav>
+
+	<main>
+		<br>
+		<h2>Bookworms Connections</h2><br>
+		<!---Displaying the list of connections for that user-->
+		<table id="table">
+			<tr>
+				<th>Event</th>
+				<th>Event Name</th>
+				<th>Going</th>
+				<th>Action</th>
+			</tr>
+			<%  data.userConnsList.forEach(function(item){ 
+			%>
+			<tr class="ud-table">
+				<!---<div class="ud-table">-->
+					<!---Dynamically storing the event details along with its rsvp-->
+					<td><%= item.connectionType %></td>
+					<td><%= item.connectionName %></td>
+					<td><%= item.rsvp %></td>
+				<!---</div>-->
+				<td class="ud-action">
+					<!---<div class="ud-action">-->
+						<a href="/myConnections/update?connectionID=<%= item.connectionID %>&rsvp=<%= item.rsvp %>"><input
+								type="button" class="ubutton" value="Update"></a>
+						<a href="/myConnections/delete?connectionID=<%= item.connectionID %>"><input type="button"
+								class="dbutton" value="Delete"></a>
+					<!---</div>-->
+				</td>
+			</tr>
+			<% }); %>
+		</table>
+
+		<br>
+		<h2>User Created Connections</h2><br>
+		<!---Displaying the list of connections for that user-->
+		<table id="table1">
+			<tr>
+				<th>Event Name</th>
+				<th>Action</th>
+			</tr>
+			<%  data.userCreatedList.forEach(function(item){ 
+			%>
+			<tr class="ud-table">
+				<!---<div class="ud-table">-->
+					<td><%= item.connectionName %></td>
+				<!---</div>-->
+				<td class="ud-action">
+					<!---<div class="ud-action">-->
+						<a href="/myConnections/user/update?connectionID=<%= item.connectionID %>"><input
+								type="button" class="ubutton" value="Edit"></a>
+						<a href="/myConnections/user/delete?connectionID=<%= item.connectionID %>"><input type="button"
+								class="dbutton" value="Delete"></a>
+					<!---</div>-->
+				</td>
+			</tr>
+			<% }); %>
+		</table>
+	</main>
+
+	<footer>
+		<% include partials/footer.ejs %>
+	</footer>
+
+</body>
+
+</html>

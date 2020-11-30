@@ -1,0 +1,69 @@
+<!--Contains dynamic information about the list of connections-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Connections</title>
+	<link rel="stylesheet" type="text/css" href="assets/stylesheets/connections.css" />
+</head>
+
+<body>
+	<header id="header">
+		<% include partials/header.ejs %>
+	</header>
+
+	<nav>
+		<% include partials/navig.ejs %>
+	</nav>
+
+	<main>
+		<h3><u>Events </u></h3>
+		<section>
+			<article id="futureeve">
+				<h3><u><%= conn[0].connectionType%>: </u></h3>
+				<!--Getting the event type dynamically-->
+				<ul id="ful">
+					<% 
+						conn.forEach(function(val){  <!--Iterating the list of events under each event dynamically-->
+							if(val.connectionType === 'Future Events'){%>
+					<li><a href="/connection?connectionID=<%= val.connectionID %>" style="color: #808080">
+							<%= val.connectionName %></a></li>
+					<% }
+					}); 
+						%>
+				</ul>
+
+			</article>
+		</section>
+
+
+		<section>
+			<article>
+				<h3><u><%= conn[1].connectionType%>: </u></h3>
+				<ul id="pul">
+					<% 
+						conn.forEach(function(val){  
+							if(val.connectionType === 'Past Events'){%>
+					<li><a href="/connection?connectionID=<%= val.connectionID %>" style="color: #808080">
+							<%= val.connectionName %></a></li>
+					<% }
+					}); 
+						%>
+				</ul>
+			</article>
+		</section>
+
+	</main>
+
+	<div>
+		<img src="assets/images/events.jpg" id="sidebarimg" alt="events">
+	</div>
+
+	<footer>
+		<% include partials/footer.ejs %>
+	</footer>
+
+</body>
+
+</html>

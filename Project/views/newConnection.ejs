@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>New Connection</title>
+	<link rel="stylesheet" type="text/css" href="assets/stylesheets/newConnection.css" />
+</head>
+
+<body>
+	<header id="header">
+		<% include partials/header.ejs %>
+	</header>
+
+	<nav>
+		<% include partials/navig.ejs %>
+	</nav>
+	<!---Message for the form which validates and prints error message if any-->
+	<%
+        if(error){
+            error.forEach(function(item){%>
+	<div class="isa_error"><%=item.msg %></div>
+	<%});
+	} %>
+	<!---Form for a new connection-->
+	<form class="myForm" action="\addNewConnection" method="POST">
+		<label><b>Event</b></label>
+		<input type="text" placeholder="Enter the Event" name="eventName" required><br>
+
+		<label><b>Type of Event</b></label><br>
+		<select placeholder="Select the type of event" name="eventType" required>
+			<option value="Future Events">Future Events</option>
+			<option value="Past Events">Past Events</option>
+		</select><br>
+		<br>
+
+		<label><b>Username</b></label>
+		<input type="text" placeholder="Enter Username" name="username" required><br>
+
+		<label><b>Details</b></label>
+		<textarea name="details" rows="2" cols="25" placeholder="Enter details here" required></textarea>
+		<br>
+		<label><b>Where</b></label>
+		<input type="text" placeholder="Enter location" name="location" required>
+
+		<label><b>When</b></label>
+		<input type="date" name="date" required>
+
+		<button type="submit" class="connbutton">Create connection</button>
+	</form>
+
+	<footer>
+		<% include partials/footer.ejs %>
+	</footer>
+
+</body>
+
+</html>

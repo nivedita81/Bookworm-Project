@@ -1,0 +1,162 @@
+use bookworm;
+
+db.connectionlists.drop();
+db.userlists.drop();
+db.userconnectionlists.drop();
+
+db.createCollection("connectionlists");
+db.createCollection("userlists");  
+db.createCollection("userconnectionlists");
+
+db.connectionlists.insert([{
+        'connectionID': 'book1',
+        'connectionName': "Computer Science Students Meetup",
+        'connectionType': "Future Events",
+        'username': "Akriti",
+        'details': "In this article, I am going to tell you about the events that will take place at the Computer Science Students Meetup. The students here will be discussing on all the important innovations and latest news related to Computer Science.",
+        'location': "Atkins Library - Floor 1, UNCC",
+        'date': '10/15/2019',
+        'image': 'cs.jpg',
+	'thehost':'jayanth28'
+    },
+
+    {
+        'connectionID': 'book2',
+        'connectionName': "Sophomores Meetup",
+        'connectionType': "Past Events",
+        'username': "Aarudra",
+        'details': "In this article, I am going to tell you about the events that will take place at the Sophomores Meetup. The students here will be discussing on all the topics they learnt in the freshmen year and challenges they faced.",
+        'location': "Cone Centre, UNCC",
+        'date': '09/30/2019',
+        'image': 'sophomore.jpg',
+'thehost':'nive81'    
+},
+    
+    {
+        'connectionID': 'book3',
+        'connectionName': "Seniors Meetup",
+        'connectionType': "Past Events",
+        'username': "Aditi",
+        'details': "In this article, I am going to tell you about the events that will take place at the Seniors Meetup. The students here will be discussing on all the topics they learnt in the Junior year and challenges they faced.",
+        'location': "Cone Centre, UNCC",
+        'date': '09/27/2019',
+        'image': 'senior.jpg',
+'thehost':'jayanth28'
+    },
+    
+    {
+        'connectionID': 'book4',
+        'connectionName': "Freshmen Meetup",
+        'connectionType': "Past Events",
+        'username': "Naush",
+        'details': "In this article, I am going to tell you about the events that will take place at the Freshmen Meetup. The students here will be discussing on all the topics they learnt in high school and the different topics they will learn in college.",
+        'location': "Cone Centre, UNCC",
+        'date': '10/01/2019',
+        'image': 'freshmen.jpg',
+'thehost':'nive81'
+    },
+    
+    {
+        'connectionID': 'book5',
+        'connectionName': "Chemical Engineering Students Meetup",
+        'connectionType': "Future Events",
+        'username': "Fernandes",
+        'details': "In this article, I am going to tell you about the events that will take place at the Chemical Engineering Students Meetup. The students here will be discussing about the latest news in their field",
+        'location': "Atkins Library - Floor 2, UNCC",
+        'date': '10/20/2019',
+        'image': 'chemical.jpg',
+'thehost':'jayanth28'
+    },
+    
+    {
+        'connectionID': 'book6',
+        'connectionName': "Juniors Meetup",
+        'connectionType': "Past Events",
+        'username': "Zarchariah",
+        'details': "In this article, I am going to tell you about the events that will take place at the Junior Meetup. The students here will be discussing on all the topics they learnt in sophomore year and the different topics they will learn in junior year.",
+        'location': "Cone Centre, UNCC",
+        'date': '09/29/2019',
+        'image': 'junior.jpg',
+'thehost':'nive81'
+    },
+
+    {
+        'connectionID': 'book7',
+        'connectionName': "Mechanical Students Meetup",
+        'connectionType': "Future Events",
+        'username': "Nive",
+        'details': "In this article, I am going to tell you about the events that will take place at the Mechanical Students Meetup. The students here will be discussing about the latest news in their field.",
+        'location': "Atkins Library - Floor 3, UNCC",
+        'date': '10/16/2019',
+        'image': 'mech.jpg',
+'thehost' : 'jayanth28'
+    }]);
+
+
+
+
+
+db.userconnectionlists.insert([
+{
+	'userID':'jayanth28',
+	'connectionID': "book1",
+    'connectionType': "Future Events",
+    'connectionName': "Computer Science Students Meetup",
+    'rsvp': 'Yes',
+},
+
+{
+	'userID':'jayanth28',
+	'connectionID': "book2",
+    'connectionType': "Past Events",
+    'connectionName': "Sophomores Meetup",
+    'rsvp': 'No',
+},
+
+{
+	'userID':'nive81',
+	'connectionID': "book4",
+    'connectionType': "Past Events",
+    'connectionName': "Freshmen Meetup",
+    'rsvp': 'Maybe',
+}
+])
+
+
+db.userlists.insert([{
+    "userID" : "jayanth28",
+	"firstName" : "Jayanth",
+	"lastName" : "Veera",
+	"email" : "jveera@gmail.com",
+	"city" : "Bengaluru",
+	"state" : "KA",
+	"country" : "IN",
+	"password" : {
+		"iv" : "87c05d02f96fce1a1fe92e23b7ccee0c",
+		"encryptedData" : "12f29bae5bec80f8d0ee1e03a104abd0",
+		"key" : BinData(0,"filt5L5pDjj8sfnPV/XU4QzbSZa1C2obMUm1NcS/T+4=")
+}
+},{
+	"userID" : "nive81",
+	"firstName" : "Nivedita",
+	"lastName" : "Veera",
+	"email" : "nveera@gmail.com",
+	"city" : "Chennai",
+	"state" : "TN",
+	"country" : "IN",
+	"password" : {
+		"iv" : "a5aca47bc405a9e4fa28025ebc1748cf",
+		"encryptedData" : "2e42580cb7fd9c6fa46afd7e54c68c3d",
+		"key" : BinData(0,"fom+lF18CY/HtVzHt3/3yQsk+B3RonEeIicJUa7xmo0=")
+	}
+}]);
+
+
+
+
+
+
+
+
+
+

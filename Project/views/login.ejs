@@ -1,0 +1,43 @@
+<!--Login Page-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Login Page</title>
+	<link rel="stylesheet" type="text/css" href="/assets/stylesheets/login.css" />
+</head>
+
+<body>
+	<header id="header">
+		<% include partials/header.ejs %>
+	</header>
+
+	<nav>
+		<% include partials/navig.ejs %>
+	</nav>
+
+	<main>
+		<%	<!--Displaying error messages after validation in Login Form-->
+		if(error){
+			error.forEach(function(item){%>
+		<div class="isa_error"><%=item.msg %></div>
+		<%});
+		} %>
+		<!--Login Form-->
+		<form class="myLoginForm" method="POST" action="/myConnections/userlogin">
+			<label><b>Username</b></label><br>
+			<input type="text" placeholder="Enter the Username" name="username" required><br>
+
+			<label><b>Password</b></label><br>
+			<input type="password" placeholder="Enter Password" class="pwd" name="password" required><br>
+			<br>
+			<button type="submit" class="loginbtn" value="Login">Login</button>
+		</form>
+	</main>
+</body>
+<footer>
+	<% include partials/footer.ejs %>
+</footer>
+
+</html>

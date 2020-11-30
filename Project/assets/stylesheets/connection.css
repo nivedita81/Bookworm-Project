@@ -1,0 +1,213 @@
+@charset "UTF-8";
+body{
+  margin: 0px;
+  height: 100%;
+  background-color: #000000;
+  width: 100%;
+  font-family: Helvetica;
+}
+
+#header{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    position: relative;
+}
+
+.logo{
+    width: 200px;
+    padding: 5px;
+    margin: 5px;
+}
+
+#top-bar{
+    position: absolute;
+    top: 20px;
+    right: 10px;
+}
+
+.signupspace{
+    list-style-type: none;
+    padding: 0px;
+    text-align: center;
+    margin: 0px;
+}
+
+header ul li {
+    display: inline-block;
+} 
+
+.signupicons{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+} 
+.signupicons:hover {
+    background-color: orange;
+}
+
+.signupspace .active {
+    background-color: #4CAF50;
+}
+
+#login-status{
+    position: absolute;
+    top: 0px;
+    margin-top: 60px;
+    margin-left: 575px;
+    color: #ffffff;
+}
+
+.navsec{
+  background-color: #FFFFFF;
+  color: #000000;
+  padding: 10px;
+    margin-top: 5px;
+    position: relative;
+    display: block;
+    float: top;
+}
+
+.navsec ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    text-align: center;
+    margin: 0px;
+} 
+
+.navsec ul li {
+    display: inline-block;
+    font-size: 20px;
+} 
+
+.navbar{
+  text-align: center;
+    padding: 0px 30px;
+    display: block;
+    color: #000000;
+    font-weight: bolder;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.navbar.active {
+  background-color: #808080;
+  color: gray;
+}
+
+.navbar:hover:not(.active) {
+    background-color: #8a8a8a;
+    color: white;
+}
+
+main{
+  margin: 5px;
+}
+
+aside.item-image-container{
+    width: 100%;
+    overflow: hidden;
+    float: left;
+}
+
+.item-info{
+    width: 60%;
+    margin-left: 0px;
+    float: left;
+    margin-top: 0;
+    text-overflow: ellipsis;
+}
+
+.item-info h3{
+    margin-top : 5px; 
+    float: left;
+    padding: 10px;
+    position: absolute;
+    color: #808080;
+}
+
+.article-main-content{
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 450px;
+    padding: 10px;
+    display: left;
+    position: absolute;
+    color: #808080;
+}
+
+div.item-action{
+    display: inline-block;
+    width: auto;
+    display: left;
+}
+
+div .kidslogo{
+  float: right;
+  height: 250px;
+  width: 450px;
+}
+
+div p{
+  padding: 5px;
+}
+
+.ybutton {
+  background-color: #006400;
+  border-radius: 25px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  cursor: pointer;
+  top: 0px;
+  margin-top: 350px;
+}
+
+.nbutton {
+  background-color: Red;
+  border-radius: 25px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  cursor: pointer;
+  margin-top: 350px;
+}
+
+.mbbutton {
+    background-color: #FFEC04;
+    border-radius: 25px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+    top: 0px;
+    margin-top: 350px;
+  }
+
+footer{
+    clear: both;
+    display: block;
+    color: #808080;
+    bottom: 0px;
+    width: 100%;
+    height: auto;   
+    margin: 10px; 
+    padding: 10px 0px 10px 0px;
+    margin-top: 60px;
+}

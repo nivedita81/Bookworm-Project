@@ -1,0 +1,67 @@
+<!--Has dynamic information about a connection-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Connection Detail</title>
+	<link rel="stylesheet" type="text/css" href="assets/stylesheets/connection.css" />
+</head>
+
+<body>
+	<header id="header">
+		<% include partials/header.ejs %>
+	</header>
+
+	<nav>
+		<% include partials/navig.ejs %>
+	</nav>
+
+	<main>
+		<div class="article">
+			<div class="item-info">
+				<h3><%= obj_conn_key.connectionName %></h3>
+				<!--Getting the connection name dynamically-->
+			</div>
+			<div class="article-main-content">
+				<h3><%= obj_conn_key.details %></h3>
+				<!--Getting the details about connection dynamically-->
+				<p><em>Venue</em>: <%= obj_conn_key.location %><br><%= obj_conn_key.userName %> : (704)
+					687-0494<br>Date: <%= obj_conn_key.date %></p>
+			</div>
+		</div>
+
+		<div>
+			<img src="assets/images/<%= obj_conn_key.image %>" class="kidslogo" alt="Image">
+		</div>
+
+		<div id='action'>
+			<% if(session === undefined){ %>
+			<!--If there is no session, the actions for the rsvp buttons are disabled-->
+
+			<a href="#"><input type="button" class="ybutton" value="Yes"></a>
+			<a href="#"><input type="button" class="nbutton" value="No"></a>
+			<a href="#"><input type="button" class="mbbutton" value="May be"></a>
+			<% } %>
+
+			<% if(session != undefined){ %>
+			<!--If there is a session, the actions for the rsvp buttons are clickable-->
+
+			<a href="myConnections/rsvp?connectionID=<%= obj_conn_key.connectionID %>&rsvp=Yes"><input type="button"
+					class="ybutton" value="Yes"> </a>
+			<a href="myConnections/rsvp?connectionID=<%= obj_conn_key.connectionID %>&rsvp=No"><input type="button"
+					class="nbutton" value="No"></a>
+			<a href="myConnections/rsvp?connectionID=<%= obj_conn_key.connectionID %>&rsvp=Maybe"><input type="button"
+					class="mbbutton" value="May be"></a>
+			<% } %>
+		</div>
+
+	</main>
+
+	<footer>
+		<% include partials/footer.ejs %>
+	</footer>
+
+</body>
+
+</html>
